@@ -32,6 +32,14 @@ public class EjerciciosScanner {
 				
 				ejercicio4();
 				
+			} else if (numeroEjercicio == 5) {
+				
+				ejercicio5();
+				
+			} else if (numeroEjercicio == 6) {
+				
+				ejercicio6();
+				
 			}
 			
 			
@@ -128,49 +136,91 @@ public class EjerciciosScanner {
 		//Pedimos números y los guardamos
 		System.out.println("Introduzca números. Max 100 números.");
 		
-		//Si no se escribe esc, va a ver un bucle de coger números
-			//Se crea una array que guarde los números
-		long[] myArray = new long[100];
+		double mySum = 0;
+		long counter = 0;
 		
-		int counter = 0;
+		byte continuacion = 1;
 		
-		byte continuacion = 1;	//Variable auxiliar para parar el programa
-		
-		long myNumber = sc.nextLong();
-		
-		for (int i = 0; continuacion != 0; ++i) {
+		for (int i=0; continuacion == 1; ++i){
 			
-			myArray[i] = myNumber;
+			System.out.print("Número "+i+ ": ");
 			
-			myNumber = sc.nextLong();
+			mySum = mySum + sc.nextDouble();
+			counter = counter + 1;
 			
-			System.out.println(myArray[i]);
+			System.out.print("Continue?(1-yes)");
 			
-			//Preguntamos si continuamos
-			System.out.print("Continuación? (1-yes/0-no) ");
 			continuacion = scString.nextByte();
 			
-			counter = i+1;
-			System.out.println("Counter= "+counter);
-			
 		}
 		
-		long mySum = 0; //La suma de los numeros
 		
-		//Ahora necesitamos un bucle para hacer la media de tantos números
-		for (int i = 0; i == counter; ++i) {
-			
-			mySum = mySum + myArray[i];
-			
-			///Test///
-			System.out.println("mySum= "+mySum);
-			///\Test///
-		}
-		
-		long myMedia = mySum/counter;
+		double myMedia = mySum/counter;
 		
 		//Imprimimos y cerramos
 		System.out.println("Su media aritmética es: "+ myMedia);
+		sc.close();
+		scString.close();
+		
+	}
+	
+	//Diseñar una aplicación que calcule la longitud y el área de una circunferencia. Para ello, el usuario debe introducir el radio, que puede contener decimales. Usa Math.PI para tomar el valor de PI. (longitud = 2πr, área=πr2)
+	public static void ejercicio5() {
+		
+		//Iniciar el escaner
+		Scanner sc = new Scanner(System.in);
+		
+		//Introduccion de datos
+		System.out.print("Introduzca usted el radio: ");
+		
+		double radio = sc.nextDouble();
+		
+		System.out.println("Radio seleccionado igual a "+ radio);
+		
+		//Calculo de la longitud
+		
+		double longitud = 2 * Math.PI * radio;
+		
+		//Calculo del area
+		
+		double area = Math.PI * Math.pow(radio, 2);
+		
+		//Imprimir
+		System.out.print("Su longitud es igual a " + longitud + " . Y su area es igual a " + area);
+	
+	}
+	
+	//Escribir un programa que le pida dos números al usuario. A continuación, debe mostrar la suma, la resta, la multiplicación y la división de ambos números. Debe mostrarse el resultado de cada operación en una línea distinta.
+	public static void ejercicio6() {
+		
+		// SCANNER DEPLOYMENT
+		Scanner sc = new Scanner(System.in);
+		
+		//Pedir datos
+		System.out.print("Gimme num 1: ");
+		
+		long num1 = sc.nextLong();
+		
+		System.out.print("Gimme num toooo: ");
+		
+		long num2 = sc.nextLong();
+		
+		//Magia matematica
+		long sum = num1 + num2;
+		
+		long reverseMath = num1 - num2;
+		
+		long xMath = num1*num2;
+		
+		long hardMath = num1/num2;
+		
+		System.out.println("HAHA, naw SUM: "+ num1 + "+" + num2 + "="+ sum);
+		System.out.println("THEN, reverse math: "+ num1 + "-" + num2 + "="+ reverseMath);
+		System.out.println("AND, x power comes: "+ num1 + "*" + num2 + "="+ xMath);
+		System.out.println("AT LAST, HARD MATH: "+ num1 + "/" + num2 + "="+ hardMath);
+		
+		//Cerramos
+		sc.close();
 		
 	}
 	
