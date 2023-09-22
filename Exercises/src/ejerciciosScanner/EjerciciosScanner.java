@@ -1,5 +1,6 @@
 package ejerciciosScanner;
 
+import java.util.Locale;
 import java.util.Scanner;
 
 public class EjerciciosScanner {
@@ -40,20 +41,29 @@ public class EjerciciosScanner {
 				
 				ejercicio6();
 				
+			} else if (numeroEjercicio == 7) {
+				
+				ejercicio7();
+				
+			} else if (numeroEjercicio == 8) {
+				
+				ejercicio8();
+				
+			} else if (numeroEjercicio == 9) {
+				
+				ejercicio9();
+				
+			} else if (numeroEjercicio == 10) {
+				
+				ejercicio10();
+				
 			}
-			
-			
 			
 		}catch(Exception e) {		//Si ocurre un error al leer el byte, se producira el siguiente código
 			
 			System.out.println("Something unexpected happened");
 	
 		}
-		
-		
-		
-		
-		
 
 	}
 	
@@ -120,7 +130,7 @@ public class EjerciciosScanner {
 		
 		//Imprimimos y cerramos Scanner
 		
-		System.out.println("Prbablemente tengas " + diferencia + " años.");
+		System.out.println("Probablemente tengas " + diferencia + " años.");
 		
 		sc.close();
 		
@@ -132,6 +142,8 @@ public class EjerciciosScanner {
 		//Abrimos Scanner
 		Scanner sc = new Scanner(System.in);
 		Scanner scString = new Scanner(System.in);
+		
+		sc.useLocale(Locale.US);
 		
 		//Pedimos números y los guardamos
 		System.out.println("Introduzca números. Max 100 números.");
@@ -145,7 +157,7 @@ public class EjerciciosScanner {
 			
 			System.out.print("Número "+i+ ": ");
 			
-			mySum = mySum + sc.nextDouble();
+			mySum += sc.nextDouble(); //"a += b" es igual a "a = a + b"
 			counter = counter + 1;
 			
 			System.out.print("Continue?(1-yes)");
@@ -167,15 +179,20 @@ public class EjerciciosScanner {
 	//Diseñar una aplicación que calcule la longitud y el área de una circunferencia. Para ello, el usuario debe introducir el radio, que puede contener decimales. Usa Math.PI para tomar el valor de PI. (longitud = 2πr, área=πr2)
 	public static void ejercicio5() {
 		
+		//Declarar variables sin definicion.
+		
 		//Iniciar el escaner
 		Scanner sc = new Scanner(System.in);
+		sc.useLocale(Locale.US); // Localizacion US
 		
 		//Introduccion de datos
 		System.out.print("Introduzca usted el radio: ");
 		
 		double radio = sc.nextDouble();
 		
+		//Test
 		System.out.println("Radio seleccionado igual a "+ radio);
+		//\Test
 		
 		//Calculo de la longitud
 		
@@ -185,8 +202,9 @@ public class EjerciciosScanner {
 		
 		double area = Math.PI * Math.pow(radio, 2);
 		
-		//Imprimir
+		//Imprimir y cerrar scanner
 		System.out.print("Su longitud es igual a " + longitud + " . Y su area es igual a " + area);
+		sc.close();
 	
 	}
 	
@@ -195,6 +213,7 @@ public class EjerciciosScanner {
 		
 		// SCANNER DEPLOYMENT
 		Scanner sc = new Scanner(System.in);
+		sc.useLocale(Locale.US);
 		
 		//Pedir datos
 		System.out.print("Gimme num 1: ");
@@ -220,6 +239,97 @@ public class EjerciciosScanner {
 		System.out.println("AT LAST, HARD MATH: "+ num1 + "/" + num2 + "="+ hardMath);
 		
 		//Cerramos
+		sc.close();
+		
+	}
+	
+	//Escribir un programa que le pida al usuario su nombre, dirección y teléfono. Guarda cada dato en variables distintas. A continuación, muestra los datos de la siguiente forma (en rojo serían los datos introducidos por el usuario):
+	//Nombre: Elena
+	//Dirección: Calle Inventada
+	//Teléfono: 987654321
+	public static void ejercicio7() {
+		
+		//Iniciamos el scanner
+		Scanner sc = new Scanner(System.in);
+		
+		// Pedimos y guardamos datos
+		System.out.print("Nombre del sujeto: ");
+		String name = sc.nextLine();
+		
+		System.out.print("Dirección del sujeto: ");
+		String address = sc.nextLine();
+		
+		System.out.print("Celular del sujeto: ");
+		String telephoneNumber = sc.nextLine();
+		
+		//Mostramos por pantalla
+		System.out.println("Nombre: " + name);
+		System.out.println("Dirección: " + address);
+		System.out.println("Teléfono: " + telephoneNumber);
+		
+		//Sc.close()
+		sc.close();
+		
+	}
+	
+	//Escribe un programa que pida al usuario su nombre y su edad y muestre por pantalla el siguiente mensaje: “Hola Juanito, tienes 21 años, ¡qué mayor eres!”. Los datos en rojo son los datos introducidos por el usuario.
+	public static void ejercicio8(){
+		
+		//Abrimos Scanner
+		Scanner sc = new Scanner(System.in);
+		
+		//Preguntamos y guardamos los datos
+		System.out.print("Introduce tu nombre: ");
+		String name = sc.nextLine();
+		
+		System.out.print("Introduce tu edad: ");
+		byte edad = sc.nextByte();
+		
+		//Imprimimos y cerramos scanner
+		System.out.print("Hola " + name + ", tienes " + edad + " años, con lo mayor que eres, ¡podrías ser una reliquia en un museo!");
+		sc.close();
+		
+	}
+	
+	//Realiza un conversor de pesetas a euros. Para ello, pídele al usuario que te introduzca el valor en pesetas y, a posteriori, debes mostrarle el resultado de la conversión.(1€ = 166 ptas)
+	public static void ejercicio9(){
+		
+		//Abrimos Scanner
+		Scanner sc = new Scanner(System.in);
+		sc.useLocale(Locale.US);
+		
+		//Pedimos data y la guardamos
+		System.out.print("Introduce las pesetas que quieres cambiar a euros: ");
+		double dineroEnPesetas = sc.nextDouble();
+		
+		//Convertimos a peseta
+		
+		double dineroEnEuros = dineroEnPesetas/166;
+		
+		//Imprimimos y cerramos
+		System.out.print("Su dinero en pesetas es igual a " + dineroEnEuros + " euros.");
+		sc.close();
+		
+	}
+	
+	//Escribe un programa en el que declares una constante IVA de valor igual a 21. A continuación, pídele un precio al usuario (recuerda que los precios contienen decimales) y calcula cuál será el precio final con el IVA aplicado.
+	public static void ejercicio10(){
+		
+		//Iniciamos Scanner y definimos constantes
+		Scanner sc = new Scanner(System.in);
+		sc.useLocale(Locale.US);
+		
+		final double ivaMultiplier = 0.21; 
+		
+		//Pedimos precio
+		System.out.print("Calculadora de IVA, ¿digamé? Introduzca su precio a IVAlizar: ");
+		double precio = sc.nextDouble();
+		
+		//Calculos
+		double precioConIVA = precio - (precio*ivaMultiplier);
+		
+		//Impresion y cierre
+		System.out.print("El precio final será: " + precioConIVA);
 		sc.close();
 		
 	}
