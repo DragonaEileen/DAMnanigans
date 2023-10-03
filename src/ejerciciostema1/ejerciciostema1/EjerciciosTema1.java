@@ -314,7 +314,7 @@ public class EjerciciosTema1 {
 		
 		minutosInt = (int) minutos;	//Lo pasamos a entero
 		
-		segundosFinal = (int) ((minutos - minutosInt) * 60); //1 minuto son 60 seggundos
+		segundosFinal = (int) ((minutos - minutosInt) * 60); //1 minuto son 60 segundos
 		
 		
 		//Algoritmo 2: Resto
