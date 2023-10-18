@@ -11,28 +11,69 @@ public class Ejercicio5 {
 	public static void main(String[] args) {
 
 		//Variable auxiliar
-		int aux = (int) (Math.random()* 100);
-			//Respuesta
-		String res = "";
+		int aux = (int) (Math.random()* 100 + 1);
+			//Respuestas
+		String resYesNo = "";
+		String resMayorMenor = "";
+		
 		
 		//Scanner
 		Scanner sc = new Scanner(System.in);
 		
 		//Question
 		System.out.println("Is " + aux + " your number?");
-		res = sc.next();
+		resYesNo = sc.next();
 		
 		//Do while
 		do {
 			
-			if (res.equals("No")) {
+			if (resYesNo.equalsIgnoreCase("No")) {
 				
+				//Mayor o menor que?
 				System.out.println("Es mayor (>) o menor (<) que mi numero?");
+				resMayorMenor = sc.next();
+				
+				//If Mayor o menor que
+				if (resMayorMenor.equals(">")) {
+					
+					//Si es mayor sumamos uno
+					aux = aux + 1;
+					
+					//Question Repetitivity
+					System.out.println("Is " + aux + " your number?");
+					resYesNo = sc.next();					
+					
+				}else if (resMayorMenor.equals("<")) {
+					
+					//Si es menor restamos uno
+					aux = aux - 1;
+					
+					//Question Repetitivity
+					System.out.println("Is " + aux + " your number?");
+					resYesNo = sc.next();
+					
+				}
+				
+				
+			}else {
+				
+				//If not yes or no
+				System.out.println("Sorry I didn't understand you.");
+				
+				//Question Repetitivity
+				System.out.println("Is " + aux + " your number?");
+				resYesNo = sc.next();
 				
 			}
 			
 			
-		}while(!res.equals("Yes"));
+		}while(!resYesNo.equalsIgnoreCase("Yes"));
+		
+		//Finish
+		System.out.println("Yay!!");
+		
+		//Scanner
+		sc.close();
 		
 	}
 

@@ -40,6 +40,9 @@ public class Ejercicio8 {
 		
 		//Respuesta
 		System.out.println("El más alto mide " + highest);
+		
+		//Scanner
+		sc.close();
 
 	}
 

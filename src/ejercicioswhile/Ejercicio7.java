@@ -55,6 +55,9 @@ public class Ejercicio7 {
 			
 		}//Fin if
 		
+		//Scanner
+		sc.close();
+		
 	}
 
 }

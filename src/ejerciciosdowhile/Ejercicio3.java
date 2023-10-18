@@ -35,6 +35,9 @@ public class Ejercicio3 {
 		//Respuesta
 		System.out.println("El total es " + total);
 		
+		//Scanner
+		sc.close();
+		
 	}
 
 }

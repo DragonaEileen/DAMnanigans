@@ -31,6 +31,9 @@ public class Ejercicio4 {
 			
 		}while(counter <= 10);
 		
+		//Scanner
+		sc.close();
+		
 	}
 
 }
