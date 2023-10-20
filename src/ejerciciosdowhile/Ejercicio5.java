@@ -1,6 +1,8 @@
 package ejerciciosdowhile;
 
+import java.util.Random;
 import java.util.Scanner;
+import java.util.stream.IntStream;
 
 public class Ejercicio5 {
 	
@@ -11,66 +13,74 @@ public class Ejercicio5 {
 	public static void main(String[] args) {
 
 		//Variable auxiliar
-		int aux = (int) (Math.random()* 100 + 1);
+		int aux;
 			//Respuestas
 		String resYesNo = "";
 		String resMayorMenor = "";
-		
+			//Máximo y mínimo
+		int max = 101;
+		int min = 1;
+			
+		//Random Declaration
+		Random random = new Random();
 		
 		//Scanner
 		Scanner sc = new Scanner(System.in);
 		
-		//Question
-		System.out.println("Is " + aux + " your number?");
-		resYesNo = sc.next();
-		
 		//Do while
 		do {
 			
-			if (resYesNo.equalsIgnoreCase("No")) {
-				
-				//Mayor o menor que?
-				System.out.println("Es mayor (>) o menor (<) que mi numero?");
-				resMayorMenor = sc.next();
-				
-				//If Mayor o menor que
-				if (resMayorMenor.equals(">")) {
-					
-					//Si es mayor sumamos uno
-					aux = aux + 1;
-					
-					//Question Repetitivity
-					System.out.println("Is " + aux + " your number?");
-					resYesNo = sc.next();					
-					
-				}else if (resMayorMenor.equals("<")) {
-					
-					//Si es menor restamos uno
-					aux = aux - 1;
-					
-					//Question Repetitivity
-					System.out.println("Is " + aux + " your number?");
-					resYesNo = sc.next();
-					
-				}
-				
-				
-			}else {
-				
-				//If not yes or no
-				System.out.println("Sorry I didn't understand you.");
-				
-				//Question Repetitivity
-				System.out.println("Is " + aux + " your number?");
-				resYesNo = sc.next();
-				
-			}
+			//Aux creates a random between the max and min variable
+			aux = random.nextInt(min, max);
 			
+			//Chedcking if input is correct
+			do {
+			//We read the answer
+			System.out.println("Is " + aux + " your number?");
+			resYesNo = sc.next();
+			}while(!resYesNo.equalsIgnoreCase("Yes") && !resYesNo.equalsIgnoreCase("No"));
 			
-		}while(!resYesNo.equalsIgnoreCase("Yes"));
+			//If it's a Yes it's gonna jump this and break the loop, but if not we gotta guess other number
+			if(resYesNo.equalsIgnoreCase("No")) {
+				
+				//First let's see if the user is trolling us
+				if(min == max) {
+					
+					System.out.println("Wait what?? That is the number!!");
+					
+				}else {
+					
+					//Checking if the thing is correct
+					do {
+						
+						//Second let's see if it's greater or lesser than
+						System.out.println("Is your number greater or lesser than my number? ");
+						resMayorMenor = sc.next();
+						
+					}while(!resMayorMenor.equals("<") && !resMayorMenor.equals(">"));
+						
+					//If it's greater than the number we have a minimum, and the contrary on the other case
+					if(resMayorMenor.equals(">")) {
+							
+						min = aux;
+							
+					}else if(resMayorMenor.equals("<")){
+							
+						max = aux;
+					}	
+				
+				}//Fin If trolling
+					
+			}//Fin if Yes or No		
+			
+		}while(!resYesNo.equalsIgnoreCase("Yes") && !resYesNo.equals("ESCAPE"));
 		
 		//Finish
-		System.out.println("Yay!!");
+		if(resYesNo.equalsIgnoreCase("Yes")) {
+			System.out.println("Yay!!");
+		}else {
+			System.out.println("Thanks for playing with me ^_^");
+		}
 		
 		//Scanner
 		sc.close();
