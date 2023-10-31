@@ -25,7 +25,7 @@ public class Ejercicio9 {
 		/* Algoritmo */
 		/* Mediante un bucle For vamos a ir comprobando que sea divisible entre 2 y ese numero menos uno
 		 * y si es divisible no es primo y no necesitamos seguir por el bucle asi que rompemos*/
-		for(int i = 2; i < input -1 ; i++) {
+		for(int i = 2; i < Math.sqrt(input) ; i++) {
 			
 			if(input % i == 0) {
 				
