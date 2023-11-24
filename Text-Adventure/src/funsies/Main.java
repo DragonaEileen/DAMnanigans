@@ -37,6 +37,14 @@ public class Main {
 		player.setInventorySlot(0, "Apple", 3);
 		
 		System.out.println(player.getInventorySlot(0));
+		
+		World world = new World();
+		
+		world.setPositionContent(0, 0, player);
+		
+		System.out.println(world.getPositionContent(0, 0));
+		
+		
 	}
 
 }
