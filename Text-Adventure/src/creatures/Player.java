@@ -1,10 +1,8 @@
 package creatures;
 
-import java.util.AbstractMap;
-import java.util.AbstractMap.SimpleEntry;
+
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class Player extends Creature{
@@ -19,35 +17,34 @@ public class Player extends Creature{
     static int maxSlots = 36;
     /* We create an ArrayList of Maps (itemName, numItem) 
      * We will fill it null with the createInventory() method */
-    static ArrayList<Map<String, Integer>> inventory = new ArrayList<Map<String, Integer>>();
+    private static ArrayList<Map<String, Integer>> inventory; // new ArrayList<Map<String, Integer>>();
     
     public Player() {
     	HP = maxHP;
     	lvl = 1;
+   
+    	inventory = new ArrayList<Map<String, Integer>>();
+    	createInventory();
+
     	//... any other initial values I want	
     }
     
     /* Getters and Setters */
-    public int getHP() {
-    	return HP;
+    
+    /* Set inventory */
+    public void setInventorySlot(int slot, String itemName, int numItem ) {
+    	
+    	inventory.get(slot).put(itemName, numItem);
+    	
     }
     
-    public void setHP(int hp) {
-    	HP = hp;
+    /* Get Inventory Slot Content */
+    public Map<String, Integer> getInventorySlot(int slot){
+    	
+    	return inventory.get(slot);
+    	
     }
-    
-    public boolean isAlive(){
-    	return HP > 0;
-    }
-    
-    public void fullHeal() {
-    	HP = maxHP;
-    }
-    
-    //... any others I need
-    
-    
-    
+        
     /* @method
      * With this method we are gonna set the size of the inventory ArrayList, filling
      * it with null maps */

@@ -21,7 +21,7 @@ public class Main {
 		//Player.inventory.get(0).remove("Carrot");
 		
 		/*Now we try to create the inventory */
-		Player.createInventory();
+		//Player.createInventory();
 		
 		//Player.inventory.get(3).put("Apple", 5);
 		
@@ -33,6 +33,10 @@ public class Main {
 		player.setHP(5);
 		
 		System.out.println(player.getHP());
+		
+		player.setInventorySlot(0, "Apple", 3);
+		
+		System.out.println(player.getInventorySlot(0));
 	}
 
 }
