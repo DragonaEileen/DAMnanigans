@@ -6,4 +6,11 @@ public class Consumable extends Item {
 	
 	//protected String effects;
 	
+	
+	/* @method
+	 * Consume the item and gain (or suffer) effects  */
+	public void consume() {
+		
+	}
+	
 }

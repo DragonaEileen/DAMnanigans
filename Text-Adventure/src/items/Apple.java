@@ -2,6 +2,8 @@ package items;
 
 public class Apple extends Consumable{
 
+	
+	
 	public Apple(){
 		
 		name = "Apple";
