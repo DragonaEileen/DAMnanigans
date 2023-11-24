@@ -3,6 +3,7 @@ package funsies;
 import java.util.Map;
 
 import creatures.Player;
+import items.Apple;
 
 public class Main {
 
@@ -43,6 +44,10 @@ public class Main {
 		world.setPositionContent(0, 0, player);
 		
 		System.out.println(world.getPositionContent(0, 0));
+		
+		Apple apple = new Apple();
+		
+		System.out.println(apple.getName());
 		
 		
 	}
