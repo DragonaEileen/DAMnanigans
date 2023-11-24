@@ -2,6 +2,8 @@ package funsies;
 
 import java.util.Map;
 
+import creatures.Player;
+
 public class Main {
 
 	public static void main(String[] args) {
@@ -26,7 +28,11 @@ public class Main {
 		/* And now we check if Apple exists */
 		//System.out.println(Player.inventory.get(3));
 		
+		Player player = new Player();
 		
+		player.setHP(5);
+		
+		System.out.println(player.getHP());
 	}
 
 }
