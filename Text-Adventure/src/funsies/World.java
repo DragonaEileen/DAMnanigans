@@ -26,7 +26,7 @@ public class World {
 	}
 	
 	/* Getters and Setters */
-
+	// Content Setters and Getters
 	public void setPositionContent(int posX, int posY, Object content) {
 		
 		world2D[1][posY][posX] = content;
@@ -36,6 +36,19 @@ public class World {
 	public Object getPositionContent(int posX, int posY) {
 		
 		return world2D[1][posY][posX];
+		
+	}
+	
+	// Terrain Setters and Getters
+	public void setPositionTerrain(int posX, int posY, Object terrain) {
+	
+		world2D[0][posY][posX] = terrain;
+		
+	}
+	
+	public Object getPositionTerrain(int posX, int posY) {
+		
+		return world2D[0][posY][posX];
 		
 	}
 	

@@ -35,9 +35,13 @@ public class Main {
 		
 		System.out.println(player.getHP());
 		
-		player.setInventorySlot(0, "Apple", 3);
+		Apple apple = new Apple();
 		
-		System.out.println(player.getInventorySlot(0));
+		player.setInventorySlot(0, apple, 3);
+		
+		System.out.println(apple.getName());
+		
+		System.out.println(player.getInventorySlot(0).keySet().toArray()[0]);
 		
 		World world = new World();
 		
@@ -45,11 +49,9 @@ public class Main {
 		
 		System.out.println(world.getPositionContent(0, 0));
 		
-		Apple apple = new Apple();
-		
 		System.out.println(apple.getName());
 		
-		
+		Apple.callApple();
 	}
 
 }

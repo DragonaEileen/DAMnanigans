@@ -17,13 +17,13 @@ public class Player extends Creature{
     static int maxSlots = 36;
     /* We create an ArrayList of Maps (itemName, numItem) 
      * We will fill it null with the createInventory() method */
-    private static ArrayList<Map<String, Integer>> inventory; // new ArrayList<Map<String, Integer>>();
+    private static ArrayList<Map<items.Item, Integer>> inventory; // new ArrayList<Map<String, Integer>>();
     
     public Player() {
     	HP = maxHP;
     	lvl = 1;
    
-    	inventory = new ArrayList<Map<String, Integer>>();
+    	inventory = new ArrayList<Map<items.Item, Integer>>();
     	createInventory();
 
     	//... any other initial values I want	
@@ -32,14 +32,14 @@ public class Player extends Creature{
     /* Getters and Setters */
     
     /* Set inventory */
-    public void setInventorySlot(int slot, String itemName, int numItem ) {
+    public void setInventorySlot(int slot, items.Item itemName, int numItem ) {
     	
     	inventory.get(slot).put(itemName, numItem);
     	
     }
     
     /* Get Inventory Slot Content */
-    public Map<String, Integer> getInventorySlot(int slot){
+    public Map<items.Item, Integer> getInventorySlot(int slot){
     	
     	return inventory.get(slot);
     	
@@ -50,7 +50,7 @@ public class Player extends Creature{
      * it with null maps */
     public static void createInventory() {
     	
-    	Map<String, Integer> inventory1 = new HashMap<String, Integer>();
+    	Map<items.Item, Integer> inventory1 = new HashMap<items.Item, Integer>();
     	
     	for(int i = 1; i <= maxSlots; i++ ) {
     		
