@@ -20,7 +20,7 @@ public class Player extends Creature{
     private static ArrayList<Map<items.Item, Integer>> inventory; // new ArrayList<Map<String, Integer>>();
     
     public Player() {
-    	HP = maxHP;
+    	hitPoints = maxHP;
     	lvl = 1;
    
     	inventory = new ArrayList<Map<items.Item, Integer>>();

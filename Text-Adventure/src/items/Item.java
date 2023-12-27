@@ -1,6 +1,6 @@
 package items;
 
-public class Item {
+public abstract class Item {
 
 	protected String name;
 	
@@ -15,5 +15,7 @@ public class Item {
 		return name;
 		
 	}
+	
+	public abstract void effect();
 	
 }

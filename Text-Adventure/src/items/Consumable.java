@@ -1,13 +1,18 @@
 package items;
 
-public class Consumable extends Item {
+public  class Consumable extends Item {
 
 	protected boolean consumable = true;
 	
-	/* @method
-	 * Consume the item and gain (or suffer) effects  */
-	public void consume() {
+	/**
+	 * Este método va a reducir en uno el "stock" y va a llamar a la función de efecto de el item consumido
+	 * 
+	 * @param item Item a consumir por parámetro
+	 * @return void
+	 */
+	public void consume(Item item) {
 		
+	
 		
 	}
 	
