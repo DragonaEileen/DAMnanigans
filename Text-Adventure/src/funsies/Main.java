@@ -4,6 +4,7 @@ import java.util.Map;
 
 import creatures.Player;
 import items.Apple;
+import creatures.Creature;
 
 public class Main {
 
@@ -28,28 +29,29 @@ public class Main {
 		
 		/* And now we check if Apple exists */
 		//System.out.println(Player.inventory.get(3));
-		
-		Player player = new Player();
-		
-		player.setHP(5);
-		
-		System.out.println(player.getHP());
-		
-		Apple apple = new Apple();
-		
-		player.setInventorySlot(0, apple, 3);
-		
-		System.out.println(apple.getName());
-		
-		System.out.println(player.getInventorySlot(0).keySet().toArray()[0]);
-		
-		World world = new World();
-		
-		world.setPositionContent(0, 0, player);
-		
-		System.out.println(world.getPositionContent(0, 0));
-		
-		System.out.println(apple.getName());
+//		
+//		Player player = new Player();
+//		
+//		player.setHP(5);
+//		
+//		System.out.println(player.getHP());
+//		
+//		Apple apple = new Apple();
+//		
+//		player.setInventorySlot(0, apple, 3);
+//		
+//		System.out.println(apple.getName());
+//		
+//		System.out.println(player.getInventorySlot(0).keySet().toArray()[0]);
+//		
+//		World world = new World();
+//		
+//		world.setPositionContent(0, 0, player);
+//		
+//		System.out.println(world.getPositionContent(0, 0));
+//		
+//		System.out.println(apple.getName());
+//		
 		
 	}
 

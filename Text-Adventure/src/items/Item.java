@@ -1,11 +1,10 @@
 package items;
 
-public abstract class Item {
+public class Item {
 
 	protected String name;
 	
 	protected String description;
-	
 	
 	
 	/* Getters and Setters */
@@ -16,6 +15,5 @@ public abstract class Item {
 		
 	}
 	
-	public abstract void effect();
 	
 }
